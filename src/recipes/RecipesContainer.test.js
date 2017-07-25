@@ -3,6 +3,7 @@ import chai, { expect } from 'chai'
 import { shallow } from 'enzyme'
 import chaiEnzyme from 'chai-enzyme'
 import RecipesContainer from './RecipesContainer'
+import Title from "../components/Title"
 
 chai.use(chaiEnzyme())
 
@@ -13,4 +14,9 @@ describe('<RecipesContainer />', () => {
     expect(container).to.have.className('wrapper')
     expect(container).to.have.className('recipes')
   })
+
+  it('sets the Title to "All Recipes"', () => {
+    expect(container).to.contain(<Title content="Recipes" />)
+  })
+
 })
