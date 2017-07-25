@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Title from './components/Title'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
+          <Title content="This is only for fun."/>
         </p>
       </div>
     );
