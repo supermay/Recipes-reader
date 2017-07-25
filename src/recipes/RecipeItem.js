@@ -14,6 +14,7 @@ export default class RecipeItem extends PureComponent {
     vegerarian: PropTypes.bool,
     pescatarian: PropTypes.bool,
   }
+  
   render() {
     const { title, summary, vegan, vegetarian, pescatarian } = this.props
 

@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react'
 import './LikeButton.css'
+import HeartGrey from '../images/heart-grey.svg'
+import HeartRed from '../images/heart-red.svg'
+
 
 export default class LikeButton extends PureComponent {
   constructor(){
@@ -19,15 +22,21 @@ export default class LikeButton extends PureComponent {
   }
 
   toggleLike() {
-    console.log('Like button clicked!')
+    this.setState({
+      liked: !this.state.liked
+    })
+
   }
 
   render(){
-    const liked = false
+    const {liked} = this.state
     return (
       <p className={ this.classNames() }>
         <button onClick={ this.toggleLike.bind(this) }>
-          { liked ?  '❤️' : '♡'  }
+          <img className="heart" src={ liked ? HeartRed : HeartGrey } />
+          <span className="copy">
+            <img className="heart" src={ liked ? HeartRed : HeartGrey } />
+          </span>
         </button>
         <span className="likes">{ liked? 'You like this' : null}
         </span>
