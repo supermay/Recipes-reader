@@ -6,7 +6,7 @@ export default class RecipeItem extends PureComponent {
 
     return(
       <article className='recipe'>
-        <h1>{ Title }</h1>
+        <h1>{ title }</h1>
         <div>
           <p>{ summary }</p>
           <ul>
