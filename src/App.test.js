@@ -5,6 +5,7 @@ import { shallow } from 'enzyme'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
 import Title from './components/Title'
+import RecipesContainer from './recipes/RecipesContainer'
 
 chai.use(chaiEnzyme())
 
@@ -17,6 +18,10 @@ describe('<App />',() => {
 
   it('contains a Title', () => {
     expect(app).to.have.descendants(Title)
+  })
+
+  it('contains a Recipes Container', () => {
+    expect(app).to.have.descendants(RecipesContainer)
   })
 
   it('sets the Title to "All Recipes"', () => {
