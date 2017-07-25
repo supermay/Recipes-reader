@@ -40,7 +40,7 @@ class App extends Component {
     return (
       <div>
       <Title content="All recipes" />
-      <RecipesContainer recipes={[]} />
+      <RecipesContainer recipes={ recipes } />
       </div>
     );
   }
