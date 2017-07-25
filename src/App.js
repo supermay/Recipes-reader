@@ -33,12 +33,32 @@ const recipes = [
   },
 ]
 
+// remember to update the seed
 class App extends Component {
+  constructor(){
+    super()
+    this.state = { recipes: recipes}
+  }
+  updateRecipe(id,updateAttributes){
+    const { recipes } = this.props
+    this.setState({
+      recipes: recipes.map((recipe) => {
+        // Match the change and the recipe
+        if (recipes._id !== id) return recipe
+        // following thing is to create a new object
+        return Object.assign({},recipe, updateAttributes)
+      })
+    })
+
+  }
   render() {
+    const { recipes } = this.state
     return (
       <div>
       <Title content="All recipes" />
-      <RecipesContainer recipes={ recipes } />
+      <RecipesContainer
+      recipes={ recipes }
+      updateRecipe={ this.updateRecipe.bind(this)} />
       </div>
     );
   }

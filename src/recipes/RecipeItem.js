@@ -8,13 +8,20 @@ import LikeButton from '../components/LikeButton'
 
 export default class RecipeItem extends PureComponent {
   static propTypes = {
+    _id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     summary: PropTypes.string.isRequired,
     vegan: PropTypes.bool,
     vegerarian: PropTypes.bool,
     pescatarian: PropTypes.bool,
+    onChange: PropTypes.func.isRequired
   }
-  
+// newly added , check the framework in the reader
+  toggleLike() {
+    const { _id, liked } = this.props
+    this.props.onChange(_id, { liked: !liked})
+  }
+
   render() {
     const { title, summary, vegan, vegetarian, pescatarian } = this.props
 
@@ -29,7 +36,7 @@ export default class RecipeItem extends PureComponent {
             { pescatarian && <li><img src={Pescatarian} alt="pescatarian" /></li> }
           </ul>
         </div>
-        <LikeButton />
+        <LikeButton onChange={this.toggleLike.bind(this)}/>
       </article>
     )
   }

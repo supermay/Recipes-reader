@@ -15,4 +15,12 @@ describe('<Title />',() => {
   it('has the content',() => {
     expect(title).to.have.text('Maybe tofu?')
   })
+  // extra to check if things change it still renders things it is supposed to render
+  describe('with a different content prop', () => {
+  const title = shallow(<Title content="Something Completely Different!" />)
+
+  it('renders a different title text', () => {
+    expect(title).to.have.text('Something Completely Different!')
+  })
+})
 })
