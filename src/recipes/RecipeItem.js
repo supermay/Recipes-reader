@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Pescatarian from '../images/Pescatarian.svg'
 import Vegetarian from '../images/Vegetarian.svg'
 import Vegan from '../images/Vegan.svg'
-
+import LikeButton from '../components/LikeButton'
 
 
 export default class RecipeItem extends PureComponent {
@@ -28,6 +28,7 @@ export default class RecipeItem extends PureComponent {
             { pescatarian && <li><img src={Pescatarian} alt="pescatarian" /></li> }
           </ul>
         </div>
+        <LikeButton />
       </article>
     )
   }

@@ -2,6 +2,14 @@ import React, { PureComponent } from 'react'
 import './LikeButton.css'
 
 export default class LikeButton extends PureComponent {
+  constructor(){
+    super()
+
+    this.state = {
+      liked: false
+    }
+  }
+
   classNames() {
     const { liked } = this.state
     let classes = 'like'
@@ -17,7 +25,7 @@ export default class LikeButton extends PureComponent {
   render(){
     const liked = false
     return (
-      <p className={ this.className() }>
+      <p className={ this.classNames() }>
         <button onClick={ this.toggleLike.bind(this) }>
           { liked ?  '❤️' : '♡'  }
         </button>
